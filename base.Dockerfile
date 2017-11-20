@@ -1,4 +1,4 @@
-FROM centos:7
+FROM nimmis/java-centos:oracle-8-jdk
 
 MAINTAINER Jens Reimann <jreimann@redhat.com>
 LABEL maintainer "Jens Reimann <jreimann@redhat.com>"
@@ -6,6 +6,8 @@ LABEL maintainer "Jens Reimann <jreimann@redhat.com>"
 RUN yum update -y
 RUN yum install -y centos-release-scl
 RUN yum install -y rh-maven33 iproute git
+ENV JAVA_HOME=/usr/java/default/
+
 
 # build hono M11 before
 
